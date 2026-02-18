@@ -63,7 +63,8 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-private fun calculateTip(amount:Double,
+@VisibleForTesting
+internal fun calculateTip(amount:Double,
                          tipPercent: Double = 15.0,
                          roundUp: Boolean): String{
     var tip = tipPercent / 100 * amount;
@@ -185,8 +186,4 @@ fun RoundTheTipRow(
             onCheckedChange = onRoundUpChanged,
         )
     }
-}
-@VisibleForTesting
-internal fun calculateTip(amount: Double, tipPercent: Double = 15.0, roundUp: Boolean) : String{
-
 }
